@@ -54,3 +54,55 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name VHDL_FILE ss7.vhdl
+set_global_assignment -name VHDL_FILE main.vhdl
+set_global_assignment -name VHDL_FILE divfreq.vhdl
+set_global_assignment -name VHDL_FILE cont.vhdl
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+
+set_location_assignment PIN_P11 -to clk
+set_location_assignment PIN_C17 -to ssg0[6]
+set_location_assignment PIN_D17 -to ssg0[5]
+set_location_assignment PIN_E16 -to ssg0[4]
+set_location_assignment PIN_C16 -to ssg0[3]
+set_location_assignment PIN_C15 -to ssg0[2]
+set_location_assignment PIN_E15 -to ssg0[1]
+set_location_assignment PIN_C14 -to ssg0[0]
+
+set_location_assignment PIN_B17 -to ssg1[6]
+set_location_assignment PIN_A18 -to ssg1[5]
+set_location_assignment PIN_A17 -to ssg1[4]
+set_location_assignment PIN_B16 -to ssg1[3]
+set_location_assignment PIN_E18 -to ssg1[2]
+set_location_assignment PIN_D18 -to ssg1[1]
+set_location_assignment PIN_C18 -to ssg1[0]
+
+
+set_location_assignment PIN_B22 -to ssg2[6]
+set_location_assignment PIN_C22 -to ssg2[5]
+set_location_assignment PIN_B21 -to ssg2[4]
+set_location_assignment PIN_A21 -to ssg2[3]
+set_location_assignment PIN_B20 -to ssg2[0]
+set_location_assignment PIN_A20 -to ssg2[1]
+set_location_assignment PIN_B19 -to ssg2[2]
+set_location_assignment PIN_F21 -to ssg3[0]
+set_location_assignment PIN_E22 -to ssg3[1]
+set_location_assignment PIN_E21 -to ssg3[2]
+set_location_assignment PIN_C19 -to ssg3[3]
+set_location_assignment PIN_C20 -to ssg3[4]
+set_location_assignment PIN_D19 -to ssg3[5]
+set_location_assignment PIN_E17 -to ssg3[6]
+set_location_assignment PIN_B8 -to reset
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
