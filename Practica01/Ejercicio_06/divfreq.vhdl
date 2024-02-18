@@ -17,7 +17,7 @@ begin
   begin
     if (rising_edge(clk)) then
       -- if (contador = 25000000) then
-        if (contador = 250000) then
+        if (contador = 750000) then
         contador <= 0;
         clkl     <= not clkl;
       else
