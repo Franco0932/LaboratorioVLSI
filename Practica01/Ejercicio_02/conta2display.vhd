@@ -14,7 +14,10 @@ architecture arqconta2display of conta2display is
 signal bandera: std_logic; --Señal que llevará el valor de la bandera de una entidad a otra.
 signal conteo: integer range 0 to 9; --Señal que llevará el entero a mostrar en el segundo display.
 begin
-	u4: entity work.contador2(arqcontador2) port map(clk, ssg0, bandera); --Al contador modificado le damos como entrada al reloj de la tarjeta, le asignamos su salida ssg a nuestra salida ssg0, y su salida bandera a nustra señal bandera.
-	u5: entity work.cont2(arqcont2) port map(bandera, conteo, banderaSal); --Al cont modificado le damos la señal bandera como su entrada clk, su salida conteo se la asignamos a nuestra señal conteo y su salida bandera a nuestra salida banderaSal.
-	u6: entity work.ss7(arqss7) port map(conteo, ssg1); --Le pasamos el valor de la señal conteo como entrada para convertirlo a los valores del display y le asignamos su salida a nustra salida ssg1 para el segundo display.
+	u4: entity work.contador2(arqcontador2) port map(clk, ssg0, bandera); --Al contador modificado le damos como entrada
+  -- al reloj de la tarjeta, le asignamos su salida ssg a nuestra salida ssg0, y su salida bandera a nustra señal bandera.
+	u5: entity work.cont2(arqcont2) port map(bandera, conteo, banderaSal); --Al cont modificado le damos la señal bandera
+  -- como su entrada clk, su salida conteo se la asignamos a nuestra señal conteo y su salida bandera a nuestra salida banderaSal.
+	u6: entity work.ss7(arqss7) port map(conteo, ssg1); --Le pasamos el valor de la señal conteo como entrada para
+  -- convertirlo a los valores del display y le asignamos su salida a nustra salida ssg1 para el segundo display.
 end architecture;

@@ -14,6 +14,7 @@ signal clkl: std_logic;
 signal conteo: integer range 0 to 9;
 begin
 	u1: entity work.divf(arqdivf) port map(clk,clkl);
-	u2: entity work.cont2(arqcont2) port map(clkl,conteo, bandera); --Le pasamos la bandera del cont modificado a nustra nueva bandera.
+  --Le pasamos la bandera del cont modificado a nustra nueva bandera.
+	u2: entity work.cont2(arqcont2) port map(clkl,conteo, bandera);
 	u3: entity work.ss7(arqss7) port map(conteo,ssg);
 end architecture;
